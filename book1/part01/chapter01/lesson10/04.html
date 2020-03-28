@@ -1,0 +1,13 @@
+<meta charset="UTF-8">
+<script type="text/javascript">
+  function MyClass(){
+    this.name = "멤버변수";
+  }
+
+  MyClass.prototype.showName=function(){
+    document.write("name = ", this.name);
+  }
+
+  var objClass = new MyClass();
+  objClass.showName();
+</script>
