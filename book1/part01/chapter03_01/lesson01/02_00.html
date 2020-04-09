@@ -1,0 +1,33 @@
+<meta charset="UTF-8">
+<body>
+  <div id="panel">
+    <div id="bar"> </div>
+    <img src="fish.jpeg" id="fish">
+  </div>
+
+  <div id="nav">
+    <button id="btnStart">물고기 움직이기</button>
+  </div>
+</body>
+<script
+  src="https://code.jquery.com/jquery-3.4.1.js"
+  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+  crossorigin="anonymous"></script>
+<script type="text/javascript">
+
+  $(document).ready(function(){
+
+    $('#btnStart').on('click', function(){
+      $('#fish').animate({
+
+
+        height: 'toggle'
+      }, 1000)
+    })
+    //물고기 노드 구하기.
+    //var fish = $('#fish');
+
+    //버튼에 이벤트 걸기.
+
+  })
+</script>
