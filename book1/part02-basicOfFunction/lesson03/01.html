@@ -1,0 +1,24 @@
+<script type="text/javascript">
+  var name = 'test1';
+  function func1(){
+    var name = 'test2';
+    document.write('2. name = '+name,'\n');
+  }
+
+  function func2(){
+    var name = 'test3';
+    document.write('3. name = '+name,'\n');
+  }
+
+  function func3(){
+    name = 'test20';
+    document.write('4. name = '+name +'\n');
+  }
+
+  document.write('1. name = '+name+'\n');
+  func1();
+  func2();
+  func3();
+  document.write('5. name = '+name, '\n');
+
+</script>
