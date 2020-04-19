@@ -1,0 +1,30 @@
+<meta charset="UTF-8">
+<script type="text/javascript">
+  function sample(){
+    var sum = 0;
+    var count =1;
+
+    //무한루프 시작
+    while(true){
+      var value = parseInt(window.prompt('수 입력', 1));
+      if(value == 0){
+        document.write('종료합니다.');
+
+        //return은 함수 탈출
+        //break문은 루프 탈출
+        return;
+      }
+
+      //입력값 더하기
+      sum += value;
+
+      //입력값 출력하기
+      document.write(count+'.'+sum+'\n');
+    }
+
+    document.write('총'+count+'번 실행했습니다.');
+  }
+
+  //함수 호출
+  sample();
+</script>
