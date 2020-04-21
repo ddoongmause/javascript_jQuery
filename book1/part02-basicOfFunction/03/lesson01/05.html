@@ -1,0 +1,18 @@
+<meta charset="UTF-8">
+<script
+  src="https://code.jquery.com/jquery-3.4.1.js"
+  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+  crossorigin="anonymous"></script>
+<script type="text/javascript">
+  $(document).ready(function(){
+    function createHello() {
+      function hello(user) {
+        document.write(user+'님 방문을 환영합니다.');
+      }
+      return hello;
+    }
+
+    var result = createHello();
+    result('웹동네');
+  })
+</script>
