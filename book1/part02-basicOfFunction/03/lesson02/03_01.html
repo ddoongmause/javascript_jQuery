@@ -1,0 +1,38 @@
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title> </title>
+  <style>
+    #info {
+      border:1px solid #000;
+      min-height:100px;
+    }
+  </style>
+  <script
+    src="https://code.jquery.com/jquery-3.4.1.js"
+    integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+    crossorigin="anonymous"></script>
+
+  <script type="text/javascript">
+    var count = 0;
+    var $info = null;
+
+    $(document).ready(function(){
+      $info = $('#info');
+      //html은 기존html로 작성한거 지우고 새로 씌움 append는 추가추가
+      $info.append('<p>'+count+'안녕하세요. 환영합니다.</p>');
+      count++;
+      $('#btnStart').click(function(){
+        $info.append('<p>'+count+'안녕하세요. 환영합니다.</p>');
+        count++;
+      })
+    });
+  </script>
+</head>
+<body>
+<button id="btnStart">출력</button>
+<div id="info">
+
+</div>
+</body>
+</html>
