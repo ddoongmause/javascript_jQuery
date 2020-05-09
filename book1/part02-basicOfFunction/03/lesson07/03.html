@@ -1,0 +1,20 @@
+<meta charset="UTF-8">
+<button id="btnStart">dasdasdas</button>
+<script
+  src="https://code.jquery.com/jquery-3.4.1.js"
+  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+  crossorigin="anonymous"></script>
+<script type="text/javascript">
+  $('#btnStart').click(function(){
+    start();
+    document.write('시작합니다.');
+  });
+
+  function start(){
+    var count = 0;
+    setInterval(function(){
+      count++;
+      document.write(count);
+    }, 1000);
+  }
+</script>

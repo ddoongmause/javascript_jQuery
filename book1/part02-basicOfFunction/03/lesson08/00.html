@@ -1,0 +1,26 @@
+<meta charset="UTF-8">
+<button id="btnStart">하하하</button>
+<script
+  src="https://code.jquery.com/jquery-3.4.1.js"
+  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+  crossorigin="anonymous"></script>
+<script type="text/javascript">
+  $(document).ready(function(){
+    checkCount(alertCall);
+  })
+
+  function checkCount(alertCall){
+    var count = 0;
+    $('#btnStart').click(function(){
+      count++;
+      alertCall(count);
+    })
+  }
+
+  function alertCall(count){
+    console.log(count);
+    if(count >= 10){
+      alert("완료되었습니다.")
+    }
+  }
+</script>
