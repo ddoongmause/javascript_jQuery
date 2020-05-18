@@ -13,14 +13,14 @@
     var count = 0;
     $('#btnStart').click(function(){
       count++;
-      alertCall(count);
+      if(count == 10){
+        alertCall(count);
+      }
     })
   }
 
   function alertCall(count){
     console.log(count);
-    if(count >= 10){
-      alert("완료되었습니다.")
-    }
+    alert("완료되었습니다.")
   }
 </script>
