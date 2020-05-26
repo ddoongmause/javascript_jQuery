@@ -11,12 +11,17 @@
   <div id="info"></div>
 </body>
 </html>
+<script
+  src="https://code.jquery.com/jquery-3.4.1.js"
+  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+  crossorigin="anonymous"></script>
 <script>
   var $info = null;
   $(document).ready(function(){
     $info = $('#info');
     setInterval(function(){
-
-    })
+      var aleska = parseInt(Math.random()*50)+50;
+      $info.html(aleska);
+    },500)
   })
 </script>
