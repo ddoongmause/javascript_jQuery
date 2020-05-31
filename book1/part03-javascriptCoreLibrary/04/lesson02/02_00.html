@@ -1,0 +1,33 @@
+<meta charset="UTF-8">
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+<div id="output">
+
+</div>
+</body>
+</html>
+<script
+  src="https://code.jquery.com/jquery-3.4.1.js"
+  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+  crossorigin="anonymous"></script>
+<script>
+  $(document).ready(function(){
+    var $output = $('#output');
+    var objDate = new Date();
+    var years = objDate.getFullYear();
+    var months = objDate.getMonth()+1;
+    var days = objDate.getDate();
+    var dates = objDate.getDay();
+    var arDay = ['일', '월', '화', '수', '목', '금', '토']
+    dates = arDay[dates];
+    $output.html(years+'년'+months+'월'+days+'일'+dates+'요일');
+  })
+</script>
