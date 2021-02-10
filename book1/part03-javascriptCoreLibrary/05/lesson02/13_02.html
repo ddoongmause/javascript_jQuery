@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    var aryData = [5, 2, 8, 9, 3, 6, 4, 1, 77];
+    console.log("실행 전 : " + aryData.join(","));
+    //둘다 가능
+    //aryData.sort(function(a, b){ return a-b; }).reverse();
+    aryData.sort(function(a, b){ return b-a; });
+    console.log("실행 후 : " + aryData.join(","));
+    </script>
+</body>
+</html>
