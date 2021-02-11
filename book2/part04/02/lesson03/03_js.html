@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <div>
+            <p>하하호호</p>
+            <p class="test2">후후</p>
+            <p>호호</p>
+        </div>
+    </div>
+    
+    <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+    <script>
+        var data2List = document.getElementsByClassName("test2");
+        for(var i=0; i<data2List.length; i++){
+            var data2 = data2List[i];
+            if(data2.tagName == 'P'){
+                if(data2.parentNode.tagName == 'DIV'){
+                    data2.style.border='4px solid #ff0000';
+                }
+            }
+        }
+
+        //$("div>p.test2").css("border", "4px solid #ff0000");
+    </script>
+</body>
+</html>
