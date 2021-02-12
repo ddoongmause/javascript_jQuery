@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function(){
+            /*//메뉴 항목 추가1
+            $('#menu').append('<li>newmenu1</li>');
+
+            //메뉴 항목 추가2
+            $('#menu').append('<li>newmenu2</li>');
+
+            //메뉴에 border 속성 설정
+            $('#menu').css('border', '1px solid #f00');*/
+
+            //보단 이렇게
+            var $menu = $('#menu');
+
+            //메뉴 항목 추가1
+            $menu.append('<li>newmenu1</li>');
+
+            //메뉴 항목 추가2
+            $menu.append('<li>newmenu2</li>');
+
+            //메뉴에 border 속성 설정
+            $menu.css('border', '1px solid #f00');
+        })
+    </script>
+</head>
+<body>
+<button id="add">메뉴 추가</button>
+<ul id="menu">
+    <li>menu</li>
+</ul>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+    <script>
+        //방법1
+        jQuery(document).ready(function() {
+            alert('안녕하세요. jQuery에 온 걸 환영합니다.');
+        });
+
+        //방법2 - 방법1을 간소화
+        jQuery(function(){
+            alert("안녕하세요. jQuery₩에 온 걸 환영합니다.");
+        })
+
+        //방법3 - 방법1에서 jQuery 함수 대신 $ 함수로 변경
+        $(document).ready(function(){
+            alert("안녕하세요. jQuery에 온 걸 환영합니다.");
+        })
+
+        //방법4 - 방법3을 간소화
+        $(function() {
+            alert("안녕하세요. jQuery에 온 걸 환영합니다.");
+        })
+    </script>
+</body>
+</html>

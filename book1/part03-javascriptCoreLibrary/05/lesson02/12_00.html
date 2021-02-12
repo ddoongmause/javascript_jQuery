@@ -1,0 +1,17 @@
+<script>
+    var userNames = ['영희', '철수', '미자', '진수', '딴동네'];
+    console.log("실행 전 : " + userNames.join(","));
+    userNames.sort(function compStringReverse(a,b){
+        if (a > b){
+            return -1;
+        }else if (b > a){
+            return 1;
+        }else{
+            return 0;
+        }
+    });
+    console.log("실행 후 : " + userNames.join(","));
+
+
+</script>
+<meta charset="UTF-8">
