@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            font-size: 9pt;
+            font-family: '굴림';
+        }
+        div, p, ul, li{
+            border: 1px #eeeeee solid;
+            margin: 10px;
+        }
+        ul{
+            padding: 10px;
+        }
+        li.select{
+            background-color: #ccc;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function(){
+            var count = 0;
+            //코드는 여기에 작성할 예정입니다.
+            $('#btnAdd').click(function(){
+                count++;
+                //$('.select').before('<li>new menu' + count + '</li>');
+                $('<li>new menu' + count + '</li>').insertBefore('.select');
+            })
+        });
+    </script>
+</head>
+<body>
+    <ul class="menu">
+        <li>menu1</li>
+        <li>menu2</li>
+        <li class='select'>menu3</li>
+        <li>menu4</li>
+        <li>menu5</li>
+        <li>menu6</li>
+    </ul>    
+    <div id="btnAdd">추가</div>
+</body>
+</html>
