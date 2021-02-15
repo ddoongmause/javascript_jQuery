@@ -1,0 +1,183 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD Xhtml 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title></title>
+        <style>
+            body {
+                font-size: 9pt;
+                font-family: "굴림";
+            }
+            div, p, ul, li {
+
+            }
+            ul.menu {
+                padding: 10px;
+                list-style: none;
+                border: 1px #000 solid;
+            }
+            ul.menu li {
+                border: 1px #eeeeee solid;
+                margin: 10px;
+            }
+
+            li.select {
+                background-color: #ccc;
+            }
+        </style>
+
+        <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+        <script>
+            /*
+
+             이번 미션에서는 메뉴 편집기를 만들어 볼 텐데요.
+             각각의 기능을 다음과 같은 순서로 나눠 구현해보겠습니다.
+
+             미션01 – 마지막 위치에 메뉴 아이템 추가
+             미션02 – 메뉴 아이템 선택 처리
+             미션03 – 선택 메뉴 아이템 아래에 신규 메뉴 아이템 추가
+             미션04 – 선택한 메뉴 아이템 수정
+             미션05 – 선택한 메뉴 아이템 삭제
+             미션06 – 선택한 메뉴 아이템 위치를 위로 이동
+             미션07 – 선택한 메뉴 아이템 위치를 아래로 이동
+
+             */
+            // 전역 변수 선언 및 초기화
+            var $menu = null;
+            var $menuName = null;
+            var $selectedItem = null;
+
+            $(document).ready(function() {
+                init();
+                initEvent();
+            });
+
+            //전역에서 사용할 요소 초기화
+            function init(){
+                $menu = $('ul.menu');
+                $menuName = $('#menuName');
+            }
+
+            //이벤트 초기화
+            function initEvent(){
+                $('#add').on('click', function(){
+                    addMenu();
+                })
+                $menu.on('click', 'li', function(){
+                    setSelectItem($(this));
+                })
+                $('#update').on('click', function(){
+                    updateMenuItem();
+                })
+                $('#remove').on('click', function(){
+                    removeMenuItem();
+                })
+                $('#up').on('click', function(){
+                    upMenuItem();
+                })
+                $('#down').on('click', function(){
+                    downMenuItem();
+                })
+            }
+
+            //메뉴 추가 처리
+            function addMenu(){
+                 //텍스트 입력값 구하기
+                 var menuName = $menuName.val();
+
+                 //신규 메뉴 아이템 문자열 만들기
+                 var newMenuItem = '<li>' + menuName + '</li>';
+                
+                 if($selectedItem){
+                    $selectedItem.after(newMenuItem);
+                 }else{
+                    //메뉴에 신규 메뉴 아이템 추가
+                    $menu.append(newMenuItem);
+                 }
+
+                 //내가 추가
+                 $menuName.val('');
+            }
+
+            //선택 메뉴 아이템 처리
+            function setSelectItem($item){
+                //기존 선택 메뉴 아이템이 있는 경우 선택 효과 제거
+                if($selectedItem!=null)
+                    $selectedItem.removeClass('select');
+
+                //신규 선택 메뉴 아이템 처리
+                $selectedItem = $item;
+                $selectedItem.addClass('select');
+                //내방법이었는데 조금은 별로넹
+                /* $('ul.menu li').on('click', function(){
+                    console.log($(this));
+                    if($(this).hasClass('select') == true){
+                        $(this).removeClass('select');
+                    }else{
+                        $(this).addClass('select');
+                    }
+                }) */
+            }
+
+            //선택한 메뉴 아이템 수정
+            function updateMenuItem(){
+                if($selectedItem){
+                    $selectedItem.html($menuName.val());
+                    $menuName.val('');
+                }else{
+                    alert('선택 메뉴가 존재하지 않습니다.');
+                }
+            }
+
+            //선택한 메뉴 아이템 삭제
+            function removeMenuItem(){
+                if($selectedItem){
+                    $selectedItem.remove();
+                    $selectedItem = null;
+                }else{
+                    alert('선택 메뉴가 존재하지 않습니다.');
+                }
+            }
+
+            //선택 메뉴 아이템을 위로 이동
+            function upMenuItem(){
+                if($selectedItem){
+                    var $prevItem = $selectedItem.prev();
+                    if($prevItem){
+                        $prevItem.before($selectedItem);
+                    }
+                }else{
+                    alert('선택 메뉴가 존재하지 않습니다.');
+                }
+            }
+
+            //선택 메뉴 아이템을 아래로 이동
+            function downMenuItem(){
+                if($selectedItem){
+                    var $nextItem = $selectedItem.next();
+                    if($nextItem){
+                        $nextItem.after($selectedItem);
+                    }
+                }else{
+                    alert('선택 메뉴가 존재하지 않습니다.');
+                }
+            }
+        </script>
+    </head>
+
+    <body>
+        <div>
+            <input type="text" id="menuName" />
+            <button id="add">추가</button>
+            <button id="update">수정</button>
+            <button id="remove">삭제</button>
+            <button id="up">UP</button>
+            <button id="down">DOWN</button>
+        </div>
+        <ul class="menu">
+
+        </ul>
+    </body>
+
+</html>

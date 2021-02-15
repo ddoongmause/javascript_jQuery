@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            font-size: 9pt;
+            font-family: '굴림';
+        }
+        div, p, ul, li{
+            border: 1px #eeeeee solid;
+            margin: 10px;
+        }
+        ul{
+            padding: 10px;
+        }
+        li.select{
+            background-color: #ccc;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function(){
+            //코드는 여기에 작성할 예정입니다.
+            /* $('#btnAdd').click(function(){
+                for(var i=1; i<=10; i++){
+                    //추가할 노드를 문자열로 만든 후 
+                    var data = '<li>menu' + i + '</li>';
+
+                    //노드 내용에 적용
+                    $('ul.menu').append(data);
+                }
+            }); */
+            $('#btnAdd').click(function(){
+                var data = '';
+                for(var i=1; i<=10; i++){
+                    data += '<li>menu' + i + '</li>';
+                }
+                $('ul.menu').html(data);
+            })
+        });
+    </script>
+</head>
+<body>
+    <ul class="menu"></ul>    
+    <div id="btnAdd">추가</div>
+</body>
+</html>
