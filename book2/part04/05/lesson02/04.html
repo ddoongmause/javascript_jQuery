@@ -22,6 +22,7 @@
     </style>
 </head>
 <body>
+    <button id='test'>실행</button>
     <ul class="menu">
         <li>menu1</li>
         <li>menu2</li>
@@ -32,7 +33,14 @@
     <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
     <script>
         $(document).ready(function(){
+            var size = 11;
             
+            $('#test').click(function(){
+                $('ul.menu li').each(function(index){
+                    $(this).css('fontSize', size);
+                    size++;
+                })
+            })
         })
     </script>
 </body>

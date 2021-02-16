@@ -19,20 +19,35 @@
         li.select{
             background-color: #ccc;
         }
+        li.border{
+            border: 5px solid black;
+        }
     </style>
 </head>
 <body>
+    <button id='remove'>제거</button>
     <ul class="menu">
-        <li>menu1</li>
+        <li class='select border'>menu1</li>
         <li>menu2</li>
-        <li class='select'>menu3</li>
-        <li>menu4</li>
-        <li>menu5</li>
+        <li class='border'>menu3</li>
+        <li class='select'>menu4</li>
+        <li class='select border black-bg'>menu5</li>
     </ul>
     <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
     <script>
         $(document).ready(function(){
-            
+            /* $('ul').on('click', 'li', function(){
+                if($(this).hasClass('select')){
+                    $(this).removeClass('select');
+                }else{
+                    $(this).addClass('select');
+                }
+            }) */
+            $('#remove').on('click', function(){
+                $('ul.menu li').each(function(){
+                    $(this).removeClass();
+                })
+            })
         })
     </script>
 </body>

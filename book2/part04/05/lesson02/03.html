@@ -22,6 +22,7 @@
     </style>
 </head>
 <body>
+    <button id='test'>실행</button>
     <ul class="menu">
         <li>menu1</li>
         <li>menu2</li>
@@ -32,7 +33,14 @@
     <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
     <script>
         $(document).ready(function(){
-            
+            var $item = $('ul.menu li.select');
+            $('#test').click(function(){
+                //현재 폰트 크기 구하기
+                var fontSize = parseInt($item.css('fontSize'));
+
+                //폰트 크기를 1증가
+                $item.css('fontSize', fontSize+1);
+            })
         })
     </script>
 </body>
